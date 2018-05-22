@@ -24,10 +24,38 @@
  *   3. Generate a new password on change of the input elements.
  */
 
-const charset = "abcdefghijklmnopqrstuvwxyz0123456789!§$%&/()=?#,;.:-_";
-
 function getRandomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function generatePassword(length = 20, mixedCase) {
+  const charset = "abcdefghijklmnopqrstuvwxyz0123456789!§$%&/()=?#,;.:-_";
+
+  let passwordArr = [];
+
+  for(let i = 0; i < length; i++){
+    let randomIndex = getRandomNumber(0, charset.length - 1);
+    let randomChar = charset.charAt(randomIndex);
+
+    if(mixedCase && (i + 1) % 3 === 0) {
+      randomChar = randomChar.toUpperCase();
+    }
+    passwordArr.push(randomChar);
+  }
+
+  return passwordArr.join('');
+}
+
+let outputElem = document.getElementById('output');
+let genereateButtonElem = document.getElementById('btn-generate');
+
+genereateButtonElem.addEventListener('click', function(event){
+  event.preventDefault();
+
+  outputElem.innerText = generatePassword(8);
+})
+
+outputElem.innerText = generatePassword(8);
+// console.log(generatePassword());
