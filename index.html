@@ -16,7 +16,29 @@
 <body>
   <div class="container text-center">
     <div id="output">&nbsp;</div>
-    <button class="btn btn-success" id="btn-generate">Generate password!</button>
+
+    <form>
+
+        <div class="form-row">
+            <div class="form-group col-md-8">
+            <input type="number" class="form-control" id="passwordlength" placeholder="20">
+          </div>
+
+          <div class="form-group col-md-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="checkbox">
+              <label class="form-check-label" for="gridCheck">Use Uppercase?</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+            <button class="btn btn-success" id="btn-generate">Generate password!</button>
+          </div>
+        </div>
+     </form>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
