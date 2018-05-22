@@ -30,7 +30,7 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generatePassword(length = 20, mixedCase) {
+function generatePassword(length = ('addNumbersLength'), mixedCase) {
   const charset = "abcdefghijklmnopqrstuvwxyz0123456789!§$%&/()=?#,;.:-_";
 
   let passwordArr = [];
@@ -54,8 +54,8 @@ let genereateButtonElem = document.getElementById('btn-generate');
 genereateButtonElem.addEventListener('click', function(event){
   event.preventDefault();
 
-  outputElem.innerText = generatePassword(8);
+  outputElem.innerText = generatePassword('addNumbersLength');
 })
 
-outputElem.innerText = generatePassword(8);
+outputElem.innerText = generatePassword('addNumbersLength');
 // console.log(generatePassword());
